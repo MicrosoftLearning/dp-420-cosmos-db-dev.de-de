@@ -12,18 +12,18 @@ In dieser Übung erhalten Sie Informationen zu folgenden Vorgängen:
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
-Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs unterstützt. Wenn Sie ein Azure Cosmos DB-Konto zum ersten Mal bereitstellen, wählen Sie aus, welche APIs das Konto unterstützen soll (z. B. **Mongo-API** oder **NoSQL-API**). Sobald die Bereitstellung des Azure Cosmos DB for NoSQL-Kontos abgeschlossen ist, können Sie den Endpunkt und den Schlüssel abrufen und verwenden, um unter Verwendung des Azure SDK für .NET oder einem anderen SDK Ihrer Wahl eine Verbindung mit dem Azure Cosmos DB for NoSQL-Konto herzustellen.
+Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs unterstützt. Wenn Sie ein Azure Cosmos DB-Konto zum ersten Mal bereitstellen, wählen Sie aus, welche APIs das Konto unterstützen soll (z. B. **Mongo-API** oder **NoSQL-API**). Sobald die Bereitstellung des Azure Cosmos DB for NoSQL-Kontos abgeschlossen ist, können Sie den Endpunkt und den Schlüssel abrufen und verwenden, um unter Verwendung des Azure SDK für .NET oder einem anderen SDK Ihrer Wahl eine Verbindung mit dem Azure Cosmos DB for NoSQL-Konto herzustellen.
 
 1. Öffnen Sie in einem neuen Webbrowserfenster oder einer neuen Registerkarte das Azure-Portal (``portal.azure.com``).
 
 1. Melden Sie sich mit den Microsoft-Anmeldeinformationen, die Ihrem Abonnement zugeordnet sind, beim Portal an.
 
-1. Wählen Sie **+ Ressource erstellen** aus, suchen Sie nach *Cosmos DB*, und erstellen Sie dann eine neue**Azure Cosmos DB for NoSQL-Kontoressource** mit den folgenden Einstellungen, wobei Sie die restlichen Einstellungen auf ihren Standardwerten belassen:
+1. Wählen Sie **+ Ressource erstellen** aus, suchen Sie nach *Cosmos DB*, und erstellen Sie dann eine neue**Azure Cosmos DB for NoSQL**-Kontoressource mit den folgenden Einstellungen, wobei Sie die restlichen Einstellungen auf ihren Standardwerten belassen:
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
-    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe*. |
+    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
     | **Location** | *Wählen Sie eine verfügbare Region aus.* |
     | **Kapazitätsmodus** | *Serverlos* |
@@ -34,7 +34,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
 1. Wechseln Sie zur neu erstellten **Azure Cosmos DB**-Kontoressource, und navigieren Sie zum Bereich **Schlüssel**.
 
-1. Dieser Bereich enthält die Verbindungsdetails und Anmeldeinformationen, die zum Herstellen einer Verbindung mit dem Konto aus dem SDK erforderlich sind. Speziell:
+1. Dieser Bereich enthält die Verbindungsdetails und Anmeldeinformationen, die erforderlich sind, um vom SDK aus eine Verbindung mit dem Konto herzustellen. Speziell:
 
     1. Beachten Sie das Feld **URI**. Sie verwenden diesen **Endpunktwert** später in dieser Übung.
 
@@ -54,11 +54,11 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
 1. Wählen Sie im Bereich **Daten-Explorer** die Option **Neuer Container** aus.
 
-1. Geben Sie im Popup **Neuer Container** die folgenden Werte für die jeweilige Einstellung ein, und wählen Sie dann **OK** aus:
+1. Geben Sie im Pop-up **Neuer Container** die folgenden Werte für die jeweilige Einstellung ein, und wählen Sie dann **OK** aus:
 
     | **Einstellung** | **Wert** |
     | --: | :-- |
-    | **Datenbank-ID** | *Verwenden vorhandener* &vert; *cosmicworks* |
+    | **Datenbank-ID** | *Vorhandene verwenden* &vert; *cosmicworks* |
     | **Container-ID** | *``products``* |
     | **Partitionsschlüssel** | *``/categoryId``* |
 
@@ -70,7 +70,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | --: | :-- |
-    | **Datenbank-ID** | *Verwenden vorhandener* &vert; *cosmicworks* |
+    | **Datenbank-ID** | *Vorhandene verwenden* &vert; *cosmicworks* |
     | **Container-ID** | *``productslease``* |
     | **Partitionsschlüssel** | *``/id``* |
 
@@ -91,7 +91,7 @@ Bevor Sie die *Azure Functions-Anwendung*erstellen, müssen Sie eine *Azure Appl
     | **Einstellung** | **Wert** |
     | ---: | :--- |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
-    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe*. |
+    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Name** | *``lab14laworkspace``* |
     | **Location** | *Wählen Sie eine verfügbare Region aus.* |
 
@@ -104,7 +104,7 @@ Bevor Sie die *Azure Functions-Anwendung*erstellen, müssen Sie eine *Azure Appl
     | **Einstellung** | **Wert** |
     | ---: | :--- |
     | **Abonnement (beide Einträge)** | *Ihr vorhandenes Azure-Abonnement* |
-    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe*. |
+    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Name** | *``lab14appinsight``* |
     | **Location** | *Wählen Sie eine verfügbare Region aus.* |
     | **Log Analytics-Arbeitsbereich** | *lab14laworkspace* |
@@ -120,7 +120,7 @@ Bevor Sie mit dem Schreiben von Code beginnen können, müssen Sie die Azure Fun
     | **Einstellung** | **Wert** |
     | ---: | :--- |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
-    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe*. |
+    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Name** | *Geben Sie einen global eindeutigen Namen ein.* |
     | **Veröffentlichen** | *Code* |
     | **Runtimestapel** | *.NET* |
@@ -243,7 +243,7 @@ Sie werden ein Befehlszeilen-Dienstprogramm verwenden, das eine **cosmicworks**-
 
 1. Starten Sie **Visual Studio Code**.
 
-    > &#128221; Wenn Sie noch nicht mit der Visual Studio Code-Schnittstelle vertraut sind, lesen Sie das [Handbuch „Erste Schritte“ für Visual Studio Code][code.visualstudio.com/docs/getstarted].
+    > &#128221; Wenn Sie noch nicht mit der Visual Studio Code-Schnittstelle vertraut sind, lesen Sie das [Handbuch „Erste Schritte“ für Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
 1. Öffnen Sie in **Visual Studio Code** das Menü **Terminal**, und wählen Sie dann **Neuer Terminal** aus, um eine neue Terminal-Instanz zu öffnen.
 
@@ -253,9 +253,9 @@ Sie werden ein Befehlszeilen-Dienstprogramm verwenden, das eine **cosmicworks**-
     dotnet tool install cosmicworks --global --version 1.*
     ```
 
-    > &#128161; Diese Ausführung dieses Befehls dauert möglicherweise einige Minuten. Dieser Befehl gibt die Warnmeldung („Das Tool „cosmicworks“ ist bereits installiert“) aus, wenn Sie die neueste Version dieses Tools bereits in der Vergangenheit installiert haben.
+    > &#128161; Die Ausführung dieses Befehls kann einige Minuten dauern. Dieser Befehl gibt die Warnmeldung (*Tool 'cosmicworks' is already installed') aus, wenn Sie die neueste Version dieses Tools in der Vergangenheit bereits installiert haben.
 
-1. Führen Sie cosmicworks aus, um Ihr Azure Cosmos DB-Konto mit den folgenden Befehlszeilenoptionen zu starten:
+1. Führen Sie „cosmicworks“ aus, um das Seeding für Ihr Azure Cosmos DB-Konto mit den folgenden Befehlszeilenoptionen durchzuführen:
 
     | **Option** | **Wert** |
     | ---: | :--- |
@@ -267,9 +267,9 @@ Sie werden ein Befehlszeilen-Dienstprogramm verwenden, das eine **cosmicworks**-
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
     ```
 
-    > &#128221; Wenn Ihr Endpunkt beispielsweise lautet **https&shy;://dp420.documents.azure.com:443/** und Ihr Schlüssel lautet: **fDR2ci9QgkdkvERTQ==**, dann lautet der Befehl: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > &#128221; Wenn Ihr Endpunkt beispielsweise **https&shy;://dp420.documents.azure.com:443/** und Ihr Schlüssel **fDR2ci9QgkdkvERTQ==** lautet, dann lautet der Befehl: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
-1. Warten Sie, bis der Befehl **cosmicworks** das Konto mit einer Datenbank, einem Container und Gegenständen aufgefüllt hat.
+1. Warten Sie, bis der Befehl **cosmicworks** das Konto mit einer Datenbank, einem Container und Elementen aufgefüllt hat.
 
 1. Schließen Sie das integrierte Terminal.
 
