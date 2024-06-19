@@ -12,18 +12,18 @@ In diesem Lab führen Sie **Sicherungen** und **Wiederherstellungen** unter Verw
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
-Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs unterstützt. Wenn Sie ein Azure Cosmos DB-Konto zum ersten Mal bereitstellen, wählen Sie aus, welche APIs das Konto unterstützen soll (z. B. **Mongo-API** oder **NoSQL-API**). Nachdem die Bereitstellung des Azure Cosmos DB for NoSQL-Kontos abgeschlossen ist, können Sie den Endpunkt und den Schlüssel abrufen. Verwenden Sie den Endpunkt und den Schlüssel, um programmgesteuert eine Verbindung mit dem Azure Cosmos DB for NoSQL-Konto herzustellen. Verwenden Sie den Endpunkt und den Schlüssel für die Verbindungszeichenfolgen des Azure SDK for .NET oder eines anderen SDK.
+Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs unterstützt. Beim ersten Bereitstellen eines Azure Cosmos DB-Kontos wählen Sie aus, welche APIs das Konto unterstützen soll (z. B. **Mongo-API** oder **NoSQL-API**). Nachdem die Bereitstellung des Azure Cosmos DB for NoSQL-Kontos abgeschlossen ist, können Sie den Endpunkt und den Schlüssel abrufen. Verwenden Sie den Endpunkt und den Schlüssel, um programmgesteuert eine Verbindung mit dem Azure Cosmos DB for NoSQL-Konto herzustellen. Verwenden Sie den Endpunkt und den Schlüssel für die Verbindungszeichenfolgen des Azure SDK for .NET oder eines anderen SDK.
 
 1. Öffnen Sie in einem neuen Webbrowserfenster oder einer neuen Registerkarte das Azure-Portal (``portal.azure.com``).
 
 1. Melden Sie sich mit den Microsoft-Anmeldeinformationen, die Ihrem Abonnement zugeordnet sind, beim Portal an.
 
-1. Wählen Sie **+ Ressource erstellen** aus, suchen Sie nach *Cosmos DB*, und erstellen Sie dann eine neue**Azure Cosmos DB for NoSQL**-Kontoressource mit den folgenden Einstellungen, wobei Sie die restlichen Einstellungen auf ihren Standardwerten belassen:
+1. Wählen Sie **+ Ressource erstellen** aus, suchen Sie nach *Cosmos DB*, und erstellen Sie dann eine neue**Azure Cosmos DB for NoSQL**-Kontoressource mit den folgenden Einstellungen, wobei Sie die restlichen Einstellungen auf ihren Standardwerten belassen:
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
-    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe*. |
+    | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
     | **Location** | *Wählen Sie eine verfügbare Region aus.* |
     | **Kapazitätsmodus** | *Bereitgestellter Durchsatz* |
