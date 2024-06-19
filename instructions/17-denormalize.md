@@ -20,7 +20,7 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
 
 1. Öffnen Sie die Befehlspalette, und führen Sie den Befehl **Git: Clone** aus, um das GitHub-Repository ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` in einem lokalen Ordner Ihrer Wahl zu klonen.
 
-    > &#128161; Sie können die Tastenkombination **STRG+UMSCHALT+P** verwenden, um die Befehlspalette zu öffnen.
+    > &#128161; Sie können die Tastenkombination **STRG+UMSCHALTTASTE+P** verwenden, um die Befehlspalette zu öffnen.
 
 1. Nachdem das Repository geklont wurde, öffnen Sie den lokalen Ordner, den Sie in **Visual Studio Code** ausgewählt haben.
 
@@ -32,14 +32,21 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
 
     > &#128161; Um ein **Git Bash**-Terminal zu öffnen, klicken Sie auf der rechten Seite des Terminalmenüs neben dem Symbol **+** auf das Pulldownmenü, und wählen Sie *Git Bash* aus.
 
-1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Mit diesen Befehlen wird ein Browserfenster geöffnet, damit Sie eine Verbindung mit dem Azure-Portal herstellen können, in dem Sie die bereitgestellte Git-Anmeldeinformationen verwenden können. Es wird außerdem ein Skript zum Erstellen eines neuen Azure Cosmos DB-Kontos ausgeführt und anschließend die App erstellt und gestartet, mit der Sie die Datenbank mit Daten füllen und die Übungen durchführen. *Nachdem Sie die bereitgestellten Anmeldeinformationen für das Azure-Konto eingegeben haben, kann der Build 15–20 Minuten dauern, sodass dies ein guter Zeitpunkt sein kann, sich einen Kaffee oder Tee zu besorgen*.
+1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Die Befehle öffnen ein Browserfenster, um eine Verbindung mit dem Azure-Portal herzustellen, in dem Sie die bereitgestellten Lab-Anmeldeinformationen verwenden.
 
     ```
     "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe" -m pip install pip-system-certs
     az login
     cd 17-denormalize
-    bash init.sh
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    ```
+
+    > &#128161; Wenn Sie zuerst das Lab **Messen der Leistung für Kundenentitäten** ausgeführt haben und die von diesem Labor erstellten Azure-Ressourcen nicht entfernt haben, schließen Sie das integrierte Terminal, ignorieren Sie den folgenden Schritt, und wechseln Sie zum nächsten Abschnitt. Beachten Sie, dass das Skript fehlschlägt, wenn Sie bereits über die Ressourcen verfügen, die vom Lab **Messen der Leistung für Kundenentitäten** erstellt wurden, und Sie versuchen, das folgende Skript auszuführen.
+
+1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Mit diesen Befehlen werden ein Skript zum Erstellen eines neuen Azure Cosmos DB-Kontos ausgeführt und anschließend die App erstellt und gestartet, mit der Sie die Datenbank mit Daten füllen und die Übungen durchführen. *Nachdem Sie die bereitgestellten Anmeldeinformationen für das Azure-Konto eingegeben haben, kann der Build 15–20 Minuten dauern, sodass dies ein guter Zeitpunkt sein kann, sich einen Kaffee oder Tee zu besorgen*.
+
+    ```
+    bash init.sh
     dotnet build
     dotnet run --load-data
     echo "Data Load completed."
@@ -523,5 +530,9 @@ Sehen Sie sich noch einmal die Abfrage der 10 wichtigsten Kunden an.
     Möglicherweise haben Sie nicht bemerkt, dass die Abfrage der 10 wichtigsten Kunden eine partitionsübergreifende Abfrage ist, die sich über alle Partitionen in Ihrem Container erstreckt.
 
     Im Begleitmodul zu diesem Modul wurde darauf hingewiesen, dass Sie versuchen sollten, partitionsübergreifende Abfragen zu vermeiden. In der Realität allerdings können solche Abfragen akzeptabel sein, wenn der Container noch klein ist oder die Abfrage nicht häufig ausgeführt wird. Wenn die Abfrage jedoch häufig ausgeführt wird oder der Container außergewöhnlich groß ist, könnte es sich lohnen, die Kosten für das Speichern der Daten in einem anderen Container und dessen Nutzung für die Abfrage zu untersuchen.
+
+## Bereinigung
+
+Löschen Sie die in dieser Übung erstellte Ressourcengruppe.  Wenn Sie nicht über den Zugriff zum Entfernen der Ressourcengruppe verfügen, entfernen Sie alle Azure-Objekte, die von dieser Übung erstellt wurden.
 
 [code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
