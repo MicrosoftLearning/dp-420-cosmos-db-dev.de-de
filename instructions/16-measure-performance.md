@@ -10,15 +10,15 @@ In dieser Übung messen Sie für die Kundenentitäten, welcher Unterschied zwisc
 
 ## Vorbereiten Ihrer Entwicklungsumgebung
 
-Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont haben, in der Sie an diesem Lab arbeiten werden, führen Sie die folgenden Schritte aus, um dies zu erledigen. Öffnen Sie andernfalls den zuvor geklonten Ordner in **Visual Studio Code**.
+Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont haben, in der Sie an diesem Lab arbeiten werden, führen Sie die folgenden Schritte aus, um dies zu tun. Öffnen Sie andernfalls den zuvor geklonten Ordner in **Visual Studio Code**.
 
 1. Starten Sie **Visual Studio Code**.
 
-    > &#128221; Wenn Sie noch nicht mit der Visual Studio Code-Schnittstelle vertraut sind, lesen Sie das [Handbuch „Erste Schritte“ für Visual Studio Code][code.visualstudio.com/docs/getstarted].
+    > &#128221; Wenn Sie mit der Visual Studio Code-Schnittstelle noch nicht vertraut sind, lesen Sie das [Handbuch „Erste Schritte“ für Visual Studio Code][code.visualstudio.com/docs/getstarted].
 
 1. Öffnen Sie die Befehlspalette, und führen Sie den Befehl **Git: Clone** aus, um das GitHub-Repository ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` in einem lokalen Ordner Ihrer Wahl zu klonen.
 
-    > &#128161; Sie können die Tastenkombination **STRG+UMSCHALT+P** verwenden, um die Befehlspalette zu öffnen.
+    > &#128161; Sie können die Tastenkombination **STRG+UMSCHALTTASTE+P** verwenden, um die Befehlspalette zu öffnen.
 
 1. Nachdem das Repository geklont wurde, öffnen Sie den lokalen Ordner, den Sie in **Visual Studio Code** ausgewählt haben.
 
@@ -30,20 +30,26 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
 
     > &#128161; Um ein **Git Bash**-Terminal zu öffnen, klicken Sie auf der rechten Seite des Terminalmenüs neben dem Symbol **+** auf das Pulldownmenü, und wählen Sie *Git Bash* aus.
 
-1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Mit diesen Befehlen wird ein Browserfenster geöffnet, damit Sie eine Verbindung mit dem Azure-Portal herstellen können, in dem Sie die bereitgestellte Git-Anmeldeinformationen verwenden können. Es wird außerdem ein Skript zum Erstellen eines neuen Azure Cosmos DB-Kontos ausgeführt und anschließend die App erstellt und gestartet, mit der Sie die Datenbank mit Daten füllen und die Übungen durchführen. *Nachdem Sie die bereitgestellten Anmeldeinformationen für das Azure-Konto eingegeben haben, kann der Build 15–20 Minuten dauern, sodass dies ein guter Zeitpunkt sein kann, sich einen Kaffee oder Tee zu besorgen*.
+1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Die Befehle öffnen ein Browserfenster, um eine Verbindung mit dem Azure-Portal herzustellen, in dem Sie die bereitgestellten Lab-Anmeldeinformationen verwenden.
 
     ```
     "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe" -m pip install pip-system-certs
     az login
     cd 16-measure-performance
-    bash init.sh
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+
+    ```
+    > &#128161; Wenn Sie zuerst das Lab **Kosten für die Denormalisierung von Daten** ausgeführt haben und die von diesem Lab erstellten Azure-Ressourcen nicht entfernt haben, schließen Sie das integrierte Terminal, ignorieren Sie den folgenden Schritt, und wechseln Sie zum nächsten Abschnitt. Beachten Sie, dass das Skript fehlschlägt, wenn Sie bereits über die Ressourcen verfügen, die durch das Lab **Kosten für die Denormalisierung von Daten** erstellt wurden, und Sie versuchen, das folgende Skript auszuführen.
+
+1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Mit diesen Befehlen wird ein Skript zum Erstellen eines neuen Azure Cosmos DB-Kontos ausgeführt und anschließend die App erstellt und gestartet, mit der Sie die Datenbank mit Daten füllen und die Übungen durchführen. *Nachdem Sie die bereitgestellten Anmeldeinformationen für das Azure-Konto eingegeben haben, kann der Build 15–20 Minuten dauern, sodass dies ein guter Zeitpunkt sein kann, sich einen Kaffee oder Tee zu besorgen*.
+
+    ```
+    bash init.sh
     dotnet build
     dotnet run --load-data
     echo "Data load process completed."
 
     ```
-
 1. Schließen Sie das integrierte Terminal.
 
 ## Messen der Leistung von Entitäten in separaten Containern
@@ -140,5 +146,9 @@ Nun fragen Sie dieselben Informationen ab, mit dem Unterschied, dass die Entitä
 Wenn Sie die RU/s-Werte für jede der von Ihnen ausgeführten Abfragen vergleichen, stellen Sie fest, dass die letzte Abfrage, bei der sich die Kundenentitäten in einem einzelnen Dokument befinden, wesentlich kostengünstiger ist als die kombinierten Kosten, die entstehen, wenn Sie die drei Abfragen unabhängig voneinander ausführen. Die Wartezeit für die Rückgabe dieser Daten ist geringer, da die Daten in einem einzigen Vorgang zurückgegeben werden.
 
 Wenn Sie nach einem einzigen Element suchen und den Partitionsschlüssel und die ID der Daten kennen, können Sie diese Daten mithilfe des Azure Cosmos DB-SDK per *Punktlesevorgang* abrufen, indem Sie `ReadItemAsync()` aufrufen. Ein Punktlesevorgang ist sogar noch schneller als unsere Abfrage. Für dieselben Kundendaten betragen die Kosten nur 1 RU/s, was eine fast dreifache Verbesserung ist.
+
+## Bereinigung
+
+Löschen Sie die in diesem Lab erstellte Ressourcengruppe.  Wenn Sie nicht über den Zugriff zum Entfernen der Ressourcengruppe verfügen, entfernen Sie alle Azure-Objekte, die von diesem Lab erstellt wurden.
 
 [code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
