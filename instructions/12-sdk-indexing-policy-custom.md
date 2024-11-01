@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Überprüfen der Standardindizierungsrichtlinie für einen Azure Cosmos\_DB for NoSQL-Container mithilfe des Portals"
+  title: Konfigurieren einer Indexrichtlinie für einen Azure Cosmos DB for NoSQL-Container mit dem SDK
   module: Module 6 - Define and implement an indexing strategy for Azure Cosmos DB for NoSQL
 ---
 
