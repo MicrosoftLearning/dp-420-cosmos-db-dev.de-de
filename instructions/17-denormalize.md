@@ -43,7 +43,7 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
 
     > &#128161; Wenn Sie zuerst das Lab **Messen der Leistung für Kundenentitäten** ausgeführt haben und die von diesem Labor erstellten Azure-Ressourcen nicht entfernt haben, schließen Sie das integrierte Terminal, ignorieren Sie den folgenden Schritt, und wechseln Sie zum nächsten Abschnitt. Beachten Sie, dass das Skript fehlschlägt, wenn Sie bereits über die Ressourcen verfügen, die vom Lab **Messen der Leistung für Kundenentitäten** erstellt wurden, und Sie versuchen, das folgende Skript auszuführen.
 
-1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Mit diesen Befehlen werden ein Skript zum Erstellen eines neuen Azure Cosmos DB-Kontos ausgeführt und anschließend die App erstellt und gestartet, mit der Sie die Datenbank mit Daten füllen und die Übungen durchführen. *Nachdem Sie die bereitgestellten Anmeldeinformationen für das Azure-Konto eingegeben haben, kann der Build 15–20 Minuten dauern, sodass dies ein guter Zeitpunkt sein kann, sich einen Kaffee oder Tee zu besorgen*.
+1. Führen Sie im **Git Bash-Terminal** die folgenden Befehle aus. Mit diesen Befehlen wird ein Skript zum Erstellen eines neuen Azure Cosmos DB-Kontos ausgeführt und anschließend die App erstellt und gestartet, mit der Sie die Datenbank mit Daten füllen und die Übungen durchführen. *Nachdem Sie die bereitgestellten Anmeldeinformationen für das Azure-Konto eingegeben haben, kann der Build 15–20 Minuten dauern, sodass dies ein guter Zeitpunkt sein kann, sich einen Kaffee oder Tee zu besorgen*.
 
     ```
     bash init.sh
@@ -533,6 +533,6 @@ Sehen Sie sich noch einmal die Abfrage der 10 wichtigsten Kunden an.
 
 ## Bereinigung
 
-Löschen Sie die in dieser Übung erstellte Ressourcengruppe.  Wenn Sie nicht über den Zugriff zum Entfernen der Ressourcengruppe verfügen, entfernen Sie alle Azure-Objekte, die von dieser Übung erstellt wurden.
+Löschen Sie die in diesem Lab erstellte Ressourcengruppe.  Wenn Sie nicht über den Zugriff zum Entfernen der Ressourcengruppe verfügen, entfernen Sie alle Azure-Objekte, die von diesem Lab erstellt wurden.
 
 [code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
