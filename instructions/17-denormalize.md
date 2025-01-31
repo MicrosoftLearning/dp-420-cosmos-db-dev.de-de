@@ -37,7 +37,6 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
     ```
     "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe" -m pip install pip-system-certs
     az login
-    cd 17-denormalize
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
     ```
 
@@ -103,6 +102,8 @@ Fragen Sie als Nächstes den Container „product“ ab, um alle Produkte für d
 
     ![Screenshot: Daten-Explorer von Azure Cosmos DB mit den Ergebnissen der Abfrage des Containers „product“.](media/16-product-results.png)
 
+   > **Hinweis**: Es kann sein, dass die angezeigten Gebühren für Anfragen leicht von den in dieser Übung angegebenen abweichen, und zwar innerhalb einer Spanne von +/- 0,1.
+
 ### Abfragen der Tags der einzelnen Produkte
 
 Fragen Sie als Nächstes den Container „productTag“ drei Mal nach den drei Produkten ab: „HL Headset“, „LL Headset“ und „ML Headset“.
@@ -139,7 +140,7 @@ Führen Sie nun eine Abfrage aus, um die Tags für „LL Headset“ zurückzugeb
 
     Diese Abfrage gibt die fünf Tags für das Produkt „LL Headset“ zurück.
 
-1. Wählen Sie die Registerkarte **Abfragestatistiken** aus, und notieren Sie sich die Anforderungskosten in Höhe von 3,45 RU.
+1. Wählen Sie die Registerkarte **Abfragestatistiken** aus, und notieren Sie sich die Anforderungskosten in Höhe von 3,47 RU/s.
 
     ![Screenshot: Ergebnisse der Abfrage des Containers „productTag“ mit den Abfragestatistiken für „LL Headset“.](media/16-product-tag-ll-stats.png)
 
@@ -157,7 +158,7 @@ Führen Sie zuletzt eine Abfrage aus, um die Tags für „ML Headset“ zurückz
 
     Diese Abfrage gibt die drei Tags für das Produkt „ML Headset“ zurück.
 
-1. Wählen Sie die Registerkarte **Abfragestatistiken** aus, und notieren Sie sich die Anforderungskosten in Höhe von 3,19 RU.
+1. Wählen Sie die Registerkarte **Abfragestatistiken** aus, und notieren Sie sich die Anforderungskosten in Höhe von 3,2 RU/s.
 
     ![Screenshot: Ergebnisse der Abfrage des Containers „productTag“ mit den Abfragestatistiken für „ML Headset“.](media/16-product-tag-ml-stats.png)
 
@@ -170,9 +171,9 @@ Nun werden alle RU/s-Kosten der einzelnen ausgeführten Abfragen addiert.
 |Kategoriename|2.92|
 |Produkt|2.89|
 |HL-Produkttags|3.06|
-|LL-Produkttags|3.45|
-|ML-Produkttags|3,19|
-|**RU/s-Gesamtkosten**|**15,51**|
+|LL-Produkttags|3.47|
+|ML-Produkttags|3.20|
+|**RU/s-Gesamtkosten**|**15.54**|
 
 ### Ausführen derselben Abfragen beim NoSQL-Design
 
