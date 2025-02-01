@@ -33,7 +33,7 @@ Bevor Sie die Azure-Befehlszeilenschnittstelle verwenden, müssen Sie zuerst ihr
 1. Installieren Sie die TLS/SSL-Zertifikate, bevor Sie sich bei Azure anmelden:
 
     ```
-    CD "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\"
+    cd "C:\Program Files\Microsoft SDKs\Azure\CLI2\"
     .\python.exe -m pip install pip-system-certs
     ```
 
@@ -57,7 +57,7 @@ Bevor Sie die Azure-Befehlszeilenschnittstelle verwenden, müssen Sie zuerst ihr
 
 1. (Optional) ***Wenn keine Ressourcengruppe für Sie erstellt wurde***, wählen Sie einen Ressourcengruppennamen aus, und erstellen Sie eine. *Beachten Sie, dass einige Lab-Umgebungen möglicherweise gesperrt sind und Sie einen Admin benötigen, um die Ressourcengruppe für Sie zu erstellen.*
 
-    i. Abrufen des Namens Ihres Standorts, der Ihnen am nächsten liegt, aus dieser Liste
+    i. Abrufen des aus dieser Liste den Namen des nächstgelegenen Standorts ab
 
     ```
     az account list-locations --query "sort_by([].{YOURLOCATION:name, DisplayName:regionalDisplayName}, &YOURLOCATION)" --output table
@@ -74,7 +74,7 @@ Die Befehlsgruppe **cosmosdb** enthält grundlegende Befehle zum Erstellen und V
 
 1. Kehren Sie zu der Terminalinstanz zurück, die bereits in **Visual Studio Code** geöffnet ist.
 
-1. Zeigen Sie die häufigsten Azure CLI-Befehle im Zusammenhang mit **Azure Cosmos DB** mithilfe des folgenden Befehls an:
+1. Zeigen Sie die häufigsten Azure CLI-Befehle im Zusammenhang mit **Azure Cosmos DB** mit dem folgenden Befehl an:
 
     ```
     az cosmosdb --help
@@ -131,7 +131,7 @@ Die Befehlsgruppe **cosmosdb sql** enthält Befehle zum Verwalten von NoSQL-API-
 
 1. Kehren Sie zu der Terminalinstanz zurück, die bereits in **Visual Studio Code** geöffnet ist.
 
-1. Zeigen Sie die häufigsten Azure CLI-Befehlsgruppen im Zusammenhang mit **Azure Cosmos DB for NoSQL** mithilfe des folgenden Befehls an:
+1. Mit dem folgenden Befehl können Sie die häufigsten Azure CLI-Befehlsgruppen im Zusammenhang mit **Azure Cosmos DB for NoSQL** anzeigen:
 
     ```
     az cosmosdb sql --help
