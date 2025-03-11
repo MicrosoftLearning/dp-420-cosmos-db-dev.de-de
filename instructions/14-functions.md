@@ -8,7 +8,7 @@ lab:
 
 Der Azure Cosmos DB-Trigger für Azure Functions wird mithilfe eines Änderungsfeedprozessors implementiert. Mit diesem Wissen können Sie Funktionen erstellen, die auf Erstellungs- und Aktualisierungsvorgänge in Ihrem Azure Cosmos DB for NoSQL-Container reagieren. Wenn Sie einen Änderungsfeedprozessor manuell implementiert haben, ist das Setup für Azure Functions ähnlich.
 
-In dieser Übung erhalten Sie Informationen zu folgenden Vorgängen:
+In diesem Lab erstellen Sie eine Funktions-App und alle erforderlichen Ressourcen, die Ihre Datenbank überwacht und Protokollinformationen für jeden darin erkannten Vorgang ausgibt.
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
@@ -115,7 +115,7 @@ Sie sollten jetzt auf Ihre Anwendung zugreifen können.
 
 Bevor Sie mit dem Schreiben von Code beginnen können, müssen Sie die Azure Functions-Ressource und die abhängigen Ressourcen (Application Insights, Storage) mithilfe des Erstellungsassistenten erstellen.
 
-1. Wählen Sie **+ Ressource erstellen** aus, suchen Sie nach *Funktionen*, und erstellen Sie dann eine neue**Funktions-App** mit den folgenden Einstellungen, wobei Sie die restlichen Einstellungen auf ihren Standardwerten belassen:
+1. Wählen Sie „Auswählen“ **+ Ressource erstellen**, suchen Sie nach *Funktionen* und erstellen Sie dann eine neue **Funktions-App**-Kontoressource. Wählen Sie **Verbrauch** als Hosting-Option und richten Sie die App mit den folgenden Einstellungen ein, wobei Sie alle übrigen Einstellungen auf ihren Standardwerten belassen:
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
@@ -124,7 +124,7 @@ Bevor Sie mit dem Schreiben von Code beginnen können, müssen Sie die Azure Fun
     | **Name** | *Geben Sie einen global eindeutigen Namen ein.* |
     | **Veröffentlichen** | *Code* |
     | **Runtimestapel** | *.NET* |
-    | **Version** | *6 (LTS) In-Process* |
+    | **Version** | *8 (LTS) In-process* |
     | **Region** | *Wählen Sie eine verfügbare Region aus.* |
     | **Speicherkonto** | *Erstellen eines neuen Speicherkontos* |
 
@@ -132,17 +132,14 @@ Bevor Sie mit dem Schreiben von Code beginnen können, müssen Sie die Azure Fun
 
 1. Warten Sie, bis die Bereitstellungsaufgabe abgeschlossen ist, bevor Sie mit dieser Aufgabe fortfahren.
 
-1. Wechseln Sie zur neu erstellten **Azure Functions**-Kontoressource, und navigieren Sie zum Bereich **Funktionen**.
-
-1. Wählen Sie im Bereich **Funktionen** **+ Erstellen** aus.
+1. Gehen Sie zur neu erstellten Kontoressource **Azure Functions** und wählen Sie auf der Überblicksseite **Funktion erstellen** aus.
 
 1. Erstellen Sie im Popup **Funktion erstellen** eine neue Funktion mit den folgenden Einstellungen, sodass alle verbleibenden Einstellungen ihren Standardwerten bleiben:
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
-    | **Entwicklungsumgebung** | *Im Portal entwickeln* |
     | **Auswählen einer Vorlage** | *Azure Cosmos DB-Trigger* |
-    | **Neue Funktion** | *``ItemsListener``* |
+    | **Funktionsname** | *``ItemsListener``* |
     | **Cosmos DB-Kontoverbindung** | Wählen Sie *Neu* &vert; *Azure Cosmos DB-Konto* &vert; *Azure Cosmos DB-Konto, das Sie zuvor erstellt haben* |
     | **Datenbankname** | *``cosmicworks``* |
     | **Sammlungsname** | *``products``* |
@@ -153,9 +150,7 @@ Bevor Sie mit dem Schreiben von Code beginnen können, müssen Sie die Azure Fun
 
 Die zuvor erstellte Funktion ist ein C#-Skript, das im Portal bearbeitet wird. Sie verwenden nun das Portal, um eine kurze Funktion zu schreiben, um den eindeutigen Bezeichner jedes Elements auszugeben, das in den Container eingefügt oder aktualisiert wurde.
 
-1. Navigieren Sie im Bereich **ItemsListener** &vert; **Funktion** zum Bereich **Code + Test**.
-
-1. Löschen Sie im Editor für das Skript **run.csx** den Inhalt des Editorbereichs.
+1. Navigieren Sie im Bereich **ItemsListener**&vert;**Code + Test** zum Editor für das **run.csx**-Skript und löschen Sie dessen Inhalt.
 
 1. Verweisen Sie im Editorbereich auf die Bibliothek **Microsoft.Azure.DocumentDB.Core**:
 
@@ -223,7 +218,7 @@ Die zuvor erstellte Funktion ist ein C#-Skript, das im Portal bearbeitet wird. S
     }
     ```
 
-1. Erweitern Sie den Abschnitt **Protokolle**, um eine Verbindung mit den Streamingprotokollen für die aktuelle Funktion herzustellen.
+1. Erweitern Sie den Abschnitt **Logs** unten auf der Seite, erweitern Sie die **App Insights Logs** und wählen Sie **Filesystem Logs** aus, um eine Verbindung zu den Streaming-Logs für die aktuelle Funktion herzustellen.
 
     > &#128161; Es kann einige Sekunden dauern, bis eine Verbindung mit dem Streamingprotokolldienst hergestellt wird. Sobald Sie verbunden sind, wird eine Meldung in der Protokollausgabe angezeigt.
 

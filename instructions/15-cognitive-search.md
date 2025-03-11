@@ -203,14 +203,15 @@ Nachdem sich jetzt Ihre materialisierte Sicht der Azure Cosmos DB for NoSQL-Dat
 1. Beachten Sie im **JSON-Abfrage-Editor** die Syntax der standardmäßigen JSON-Suchabfrage, die alle möglichen Ergebnisse mithilfe des (Platzhalter)-Operators **\*** zurückgibt.
 
    ```json
-   {
-       "search": "*"
-   }
+    {
+      "search": "*",
+      "count": true
+    }
    ```
 
 1. Wählen Sie die Schaltfläche **Suchen** aus, um die Suche auszuführen.
 
-1. Beachten Sie, dass diese Suchabfrage alle möglichen Ergebnisse zurückgibt.
+1. Beachten Sie, dass diese Suchanfrage alle möglichen Ergebnisse zurückgibt und auch ein Metadatenfeld enthält, das die Gesamtzahl der Ergebnisse angibt, auch wenn sie nicht alle auf derselben Seite enthalten sind.
 
 1. Geben Sie im Bereich **JSON-Abfrage-Editor** die folgende Abfrage ein, und wählen Sie dann die Schaltfläche **Suchen** aus:
 
@@ -221,17 +222,6 @@ Nachdem sich jetzt Ihre materialisierte Sicht der Azure Cosmos DB for NoSQL-Dat
     ```
 
 1. Beachten Sie, dass diese Suchabfrage Ergebnisse zurückgibt, die entweder die Ausdrücke **touring** oder **3000** enthalten, wobei Ergebnisse höher bewertet werden, die beide Ausdrücke enthalten. Die Ergebnisse werden dann nach dem Feld **@search.score** in absteigender Reihenfolge sortiert.
-
-1. Geben Sie im Bereich **JSON-Abfrage-Editor** die folgende Abfrage ein, und wählen Sie dann die Schaltfläche **Suchen** aus:
-
-    ```json
-    {
-        "search": "red"
-        , "count": true
-    }
-    ```
-
-1. Beachten Sie, dass diese Suchabfrage Ergebnisse mit dem Ausdruck **red** zurückgibt, aber jetzt auch ein Metadatenfeld enthält, das die Gesamtanzahl der Ergebnisse angibt, auch wenn sie nicht alle auf derselben Seite enthalten sind.
 
 1. Geben Sie im Bereich **JSON-Abfrage-Editor** die folgende Abfrage ein, und wählen Sie dann die Schaltfläche **Suchen** aus:
 
