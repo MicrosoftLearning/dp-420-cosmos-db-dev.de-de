@@ -214,7 +214,7 @@ Der restliche Codes ist recht einfach: Er ruft die Verbindungszeichenfolge ab, s
 
 1. Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie bei Bedarf eine neue Ressourcengruppe.
 
-1. Wählen Sie **.NET 6 (LTS)** aus.
+1. Wählen Sie **.NET 8 (LTS)** aus.
 
 1. Wählen Sie **Windows** aus.
 
