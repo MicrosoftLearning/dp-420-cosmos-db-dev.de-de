@@ -1,11 +1,7 @@
 ---
-title: Aktivieren von Ressourcenanbietern
 lab:
   title: Aktivieren von Ressourcenanbietern
   module: Setup
-layout: default
-nav_order: 2
-parent: Common setup instructions
 ---
 
 # Aktivieren von Azure-Ressourcenanbietern
@@ -21,8 +17,6 @@ Es gibt einige Ressourcenanbieter, die in Ihrem Azure-Abonnement registriert sei
     > &#128161; Erweitern Sie alternativ das **&#8801;**-Menü, wählen Sie **Alle Dienste** aus. Wählen Sie dann in der Kategorie **Alle** die Option **Abonnements** aus.
 
 1. Wählen Sie Ihr Azure-Abonnement.
-
-    > &#128221; Wenn Sie mehrere Abonnements besitzen, wählen Sie dasjenige aus, das Sie durch Einlösen Ihrer Azure Pass-Instanz erstellt haben.
 
 1. Wählen Sie auf dem Blatt für Ihr Abonnement im Abschnitt **Einstellungen** die Option **Ressourcenanbieter** aus.
 

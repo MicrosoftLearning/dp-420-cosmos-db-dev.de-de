@@ -18,8 +18,6 @@ Es gibt einige Ressourcenanbieter, die in Ihrem Azure-Abonnement registriert sei
 
 1. Wählen Sie Ihr Azure-Abonnement.
 
-    > &#128221; Wenn Sie mehrere Abonnements besitzen, wählen Sie dasjenige aus, das Sie durch Einlösen Ihrer Azure Pass-Instanz erstellt haben.
-
 1. Wählen Sie auf dem Blatt für Ihr Abonnement im Abschnitt **Einstellungen** die Option **Ressourcenanbieter** aus.
 
 1. Überprüfen Sie in der Liste der Ressourcenanbieter, ob folgende Anbieter registriert sind:
