@@ -1,11 +1,7 @@
 ---
-title: 07.1 - Aktivieren der Vektorsuche für Azure Cosmos DB for NoSQL
 lab:
   title: 07.1 - Aktivieren der Vektorsuche für Azure Cosmos DB for NoSQL
   module: Build copilots with Python and Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 10
-parent: Python SDK labs
 ---
 
 # Aktivieren der Vektorsuche für Azure Cosmos DB for NoSQL
@@ -16,11 +12,11 @@ In diesem Lab werden Sie ein Azure Cosmos DB for NoSQL-Konto erstellen und die V
 
 ## Vorbereiten Ihrer Entwicklungsumgebung
 
-Wenn Sie das Lab-Coderepository für **Copilots mit Azure Cosmos DB erstellen** noch nicht geklont und Ihre lokale Umgebung eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
+Wenn Sie das Lab-Coderepository für **Erstellen von Copilots mit Azure Cosmos DB** noch nicht geklont und Ihre lokale Umgebung noch nicht eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
-Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die Labs **Copilots mit Azure Cosmos DB erstellen**auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und zum [nächsten Abschnitt](#enable-vector-search-for-nosql-api) übergehen. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Cosmos DB integrierter Daten-Mitwirkender** zuweisen.
+Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die Labs **Copilots mit Azure Cosmos DB erstellen** auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und mit dem [nächsten Abschnitt](#enable-vector-search-for-nosql-api) fortfahren. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Cosmos DB integrierter Daten-Mitwirkender** zuweisen.
 
 ## Aktivieren der Vektorsuche für NOSQL API
 

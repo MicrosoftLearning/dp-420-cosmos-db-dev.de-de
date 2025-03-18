@@ -1,11 +1,7 @@
 ---
-title: 07.2 – Generieren von Vektoreinbettungen mit Azure OpenAI und Speichern in Azure Cosmos DB für NoSQL
 lab:
   title: 07.2 – Generieren von Vektoreinbettungen mit Azure OpenAI und Speichern in Azure Cosmos DB für NoSQL
   module: Build copilots with Python and Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 11
-parent: Python SDK labs
 ---
 
 # Generieren Sie Vektoreinbettungen mit Azure OpenAI und speichern Sie in Azure Cosmos DB für NoSQL

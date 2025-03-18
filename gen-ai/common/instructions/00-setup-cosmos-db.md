@@ -1,11 +1,7 @@
 ---
-title: Einrichten von Azure Cosmos DB
 lab:
   title: Einrichten von Azure Cosmos DB
   module: Setup
-layout: default
-nav_order: 3
-parent: Common setup instructions
 ---
 
 # Einrichten von Azure Cosmos DB

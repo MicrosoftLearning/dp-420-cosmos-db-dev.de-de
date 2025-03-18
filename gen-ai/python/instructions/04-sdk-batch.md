@@ -1,14 +1,10 @@
 ---
-title: 04 - Fassen Sie mehrere Punktoperationen mit dem Azure Cosmos DB for NoSQL SDK zusammen
 lab:
   title: 04 - Fassen Sie mehrere Punktoperationen mit dem Azure Cosmos DB for NoSQL SDK zusammen
   module: Perform cross-document transactional operations with the Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 7
-parent: Python SDK labs
 ---
 
-# Batchverarbeitung mehrerer Punktvorgänge mit dem SDK für Azure Cosmos DB for NoSQL
+# Führen Sie mehrere Punktoperationen zusammen mit dem Azure Cosmos DB for NoSQL SDK aus
 
 Das `azure-cosmos` Python SDK bietet die `execute_item_batch` Methode, mehrere Punktoperationen in einem einzigen logischen Schritt auszuführen. Auf diese Weise können Entwickler mehrere Vorgänge effizient bündeln und ermitteln, ob sie erfolgreich serverseitig abgeschlossen wurden.
 
@@ -16,7 +12,7 @@ In dieser Übung verwenden Sie das Python SDK, um Stapelverarbeitungsvorgänge m
 
 ## Vorbereiten Ihrer Entwicklungsumgebung
 
-Wenn Sie das Lab-Coderepository für **Copilots mit Azure Cosmos DB erstellen** noch nicht geklont und Ihre lokale Umgebung eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
+Wenn Sie das Lab-Coderepository für **Erstellen von Copilots mit Azure Cosmos DB** noch nicht geklont und Ihre lokale Umgebung noch nicht eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 

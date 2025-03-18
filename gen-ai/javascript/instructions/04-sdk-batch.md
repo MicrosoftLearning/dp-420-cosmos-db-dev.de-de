@@ -1,11 +1,7 @@
 ---
-title: 04 - Fassen Sie mehrere Punktoperationen mit dem Azure Cosmos DB for NoSQL SDK zusammen
 lab:
   title: 04 - Fassen Sie mehrere Punktoperationen mit dem Azure Cosmos DB for NoSQL SDK zusammen
   module: Perform cross-document transactional operations with the Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 7
-parent: JavaScript SDK labs
 ---
 
 # Führen Sie mehrere Punktoperationen zusammen mit dem Azure Cosmos DB for NoSQL SDK aus
@@ -16,11 +12,11 @@ In diesem Lab verwenden Sie das JavaScript SDK, um Vorgänge mit zwei Elementen 
 
 ## Vorbereiten Ihrer Entwicklungsumgebung
 
-Wenn Sie das Lab-Coderepository für **Copilots mit Azure Cosmos DB erstellen** noch nicht geklont und Ihre lokale Umgebung eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
+Wenn Sie das Lab-Coderepository für **Erstellen von Copilots mit Azure Cosmos DB** noch nicht geklont und Ihre lokale Umgebung noch nicht eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
-Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die **Build-Copilots mit Azure Cosmos DB**-Labs auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und mit dem [nächsten Abschnitt](#import-the-azurecosmos-library) fortfahren. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Cosmos DB integrierter Daten-Mitwirkender** zuweisen.
+Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die Labs **Copilots mit Azure Cosmos DB erstellen** auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und mit dem [nächsten Abschnitt](#import-the-azurecosmos-library) fortfahren. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Integrierter Mitwirkender an Cosmos DB-Daten** zuweisen.
 
 ## Importieren der @azure/cosmos-Bibliothek
 
@@ -44,13 +40,13 @@ Die **@azure/cosmos**-Bibliothek ist auf **npm** verfügbar, um sie einfach in I
     npm install @azure/cosmos
     ```
 
-1. Installieren Sie die [@azure/identity][npmjs.com/package/@azure/identity]-Bibliothek, die es uns ermöglicht, die Azure-Authentifizierung zu verwenden, um sich mit dem Azure Cosmos DB-Arbeitsbereich zu verbinden, indem Sie den folgenden Befehl verwenden:
+1. Installieren Sie die [@azure/identity][npmjs.com/package/@azure/identity]-Bibliothek, die es uns ermöglicht, die Azure-Authentifizierung zu verwenden, um eine Verbindung zum Azure Cosmos DB-Arbeitsbereich herzustellen. Verwenden Sie dazu den folgenden Befehl:
 
     ```bash
     npm install @azure/identity
     ```
 
-## Verwenden Sie die @azure/cosmos-Bibliotheken
+## Verwenden der @azure/cosmos-Bibliothek
 
 Sobald die Azure Cosmos DB-Bibliothek aus dem Azure SDK für JavaScript importiert wurde, können Sie ihre Klassen sofort verwenden, um eine Verbindung zu einem Azure Cosmos DB for NoSQL-Konto herzustellen. Die Klasse **CosmosClient** ist die Kernklasse, die verwendet wird, um die erste Verbindung zu einem Azure Cosmos DB for NoSQL-Konto herzustellen.
 
@@ -58,7 +54,7 @@ Sobald die Azure Cosmos DB-Bibliothek aus dem Azure SDK für JavaScript importie
 
 1. Öffnen Sie die leere JavaScript-Datei mit dem Namen **script.js**.
 
-1. Fügen Sie die folgenden `require` Anweisungen hinzu, um die Bibliotheken **@azure/cosmos** und **@azure/identity** zu importieren:
+1. Fügen Sie die folgenden `require`-Anweisungen hinzu, um die Bibliotheken **@azure/cosmos** und **@azure/identity** zu importieren:
 
     ```javascript
     const { CosmosClient, BulkOperationType } = require("@azure/cosmos");
@@ -73,7 +69,7 @@ Sobald die Azure Cosmos DB-Bibliothek aus dem Azure SDK für JavaScript importie
     const credential = new DefaultAzureCredential();
     ```
 
-    > &#128221; Zum Beispiel, wenn Ihr Endpunkt **https://dp420.documents.azure.com:443/** ist, würde die Anweisung **const endpoint = „https://dp420.documents.azure.com:443/“ lauten;**.
+    > &#128221; Zum Beispiel, wenn Ihr Endpunkt **https://dp420.documents.azure.com:443/** ist, würde die Anweisung **const endpoint = "https://dp420.documents.azure.com:443/" lauten;**.
 
 1. Fügen Sie eine neue Variable namens **Client** hinzu und initialisieren Sie sie als neue Instanz der Klasse **CosmosClient** unter Verwendung der Variablen **Endpunkt** und **Anmeldeinformation**:
 
