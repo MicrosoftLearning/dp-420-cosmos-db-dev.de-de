@@ -1,11 +1,7 @@
 ---
-title: 06 - Paginieren produktübergreifender Abfrageergebnisse mit dem Azure Cosmos DB for NoSQL SDK
 lab:
   title: 06 - Paginieren produktübergreifender Abfrageergebnisse mit dem Azure Cosmos DB for NoSQL SDK
   module: Author complex queries with the Azure Cosmos DB for NoSQL
-layout: default
-nav_order: 9
-parent: JavaScript SDK labs
 ---
 
 # Paginieren produktübergreifender Abfrageergebnisse mit dem SDK für Azure Cosmos DB for NoSQL
@@ -16,15 +12,15 @@ In diesem Lab erstellen Sie einen Feediterator, der in einer Schleife verwendet 
 
 ## Vorbereiten Ihrer Entwicklungsumgebung
 
-Wenn Sie das Lab-Coderepository für **Copilots mit Azure Cosmos DB erstellen** noch nicht geklont und Ihre lokale Umgebung eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
+Wenn Sie das Lab-Coderepository für **Erstellen von Copilots mit Azure Cosmos DB** noch nicht geklont und Ihre lokale Umgebung noch nicht eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
-Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die Labs **Copilots mit Azure Cosmos DB erstellen** auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und zum [nächsten Abschnitt](#create-azure-cosmos-db-database-and-container-with-sample-data) übergehen. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Cosmos DB integrierter Daten-Mitwirkender** zuweisen.
+Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die Labs **Copilots mit Azure Cosmos DB erstellen** auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und mit dem [nächsten Abschnitt](#create-azure-cosmos-db-database-and-container-with-sample-data) fortfahren. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Cosmos DB integrierter Daten-Mitwirkender** zuweisen.
 
 ## Azure Cosmos DB Datenbank und Container mit Beispieldaten erstellen
 
-Wenn Sie bereits eine Azure Cosmos DB-Datenbank mit dem Namen **cosmicworks-full** und einen Container darin mit dem Namen **Produkte** erstellt haben, der mit Beispieldaten vorgeladen ist, können Sie ihn für dieses Lab verwenden und zum [nächsten Abschnitt](#import-the-azurecosmos-library) übergehen. Führen Sie andernfalls die folgenden Schritte aus, um eine neue Beispieldatenbank und einen neuen Container zu erstellen.
+Wenn Sie bereits eine Azure Cosmos DB-Datenbank namens **cosmicworks-full** und einen Container darin namens **Produkte** erstellt haben, der mit Beispieldaten vorgeladen ist, können Sie ihn für dieses Lab verwenden und zum [nächsten Abschnitt](#import-the-azurecosmos-library) übergehen. Führen Sie andernfalls die folgenden Schritte aus, um eine neue Beispieldatenbank und einen neuen Container zu erstellen.
 
 <details markdown=1>
 <summary markdown="span"><strong>Klicken Sie hier, um die Schritte zur Erstellung der Datenbank und des Containers mit Beispieldaten zu erweitern/zu reduzieren</strong></summary>
@@ -84,7 +80,7 @@ Beim Verarbeiten von Abfrageergebnissen müssen Sie sicherstellen, dass der Code
 
 1. Öffnen Sie die leere JavaScript-Datei mit dem Namen **script.js**.
 
-1. Fügen Sie die folgenden `require` Anweisungen hinzu, um die Bibliotheken **@azure/cosmos** und **@azure/identity** zu importieren:
+1. Fügen Sie die folgenden `require`-Anweisungen hinzu, um die Bibliotheken **@azure/cosmos** und **@azure/identity** zu importieren:
 
     ```javascript
     const { CosmosClient } = require("@azure/cosmos");
@@ -99,7 +95,7 @@ Beim Verarbeiten von Abfrageergebnissen müssen Sie sicherstellen, dass der Code
     const credential = new DefaultAzureCredential();
     ```
 
-    > &#128221; Zum Beispiel, wenn Ihr Endpunkt **https://dp420.documents.azure.com:443/** ist, würde die Anweisung **const endpoint = „https://dp420.documents.azure.com:443/“ lauten;**.
+    > &#128221; Zum Beispiel, wenn Ihr Endpunkt **https://dp420.documents.azure.com:443/** ist, würde die Anweisung **const endpoint = "https://dp420.documents.azure.com:443/" lauten;**.
 
 1. Fügen Sie eine neue Variable namens **Client** hinzu und initialisieren Sie sie als neue Instanz der Klasse **CosmosClient** unter Verwendung der Variablen **Endpunkt** und **Anmeldeinformation**:
 

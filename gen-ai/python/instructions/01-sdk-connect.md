@@ -1,11 +1,7 @@
 ---
-title: 01 - Stellen Sie mit dem SDK eine Verbindung zu Azure Cosmos DB für NoSQL her
 lab:
-  title: 01 - Stellen Sie mit dem SDK eine Verbindung zu Azure Cosmos DB für NoSQL her
+  title: 01 – Herstellen einer Verbindung mit Azure Cosmos DB for NoSQL über das SDK
   module: Use the Azure Cosmos DB for NoSQL SDK
-layout: default
-nav_order: 4
-parent: Python SDK labs
 ---
 
 # Herstellen einer Verbindung mit Azure Cosmos DB for NoSQL über das SDK
@@ -16,7 +12,7 @@ In dieser Übung stellen Sie mithilfe des Azure SDK für Python eine Verbindung 
 
 ## Vorbereiten Ihrer Entwicklungsumgebung
 
-Wenn Sie das Lab-Coderepository für **Copilots mit Azure Cosmos DB erstellen** noch nicht geklont und Ihre lokale Umgebung eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
+Wenn Sie das Lab-Coderepository für **Erstellen von Copilots mit Azure Cosmos DB** noch nicht geklont und Ihre lokale Umgebung noch nicht eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
@@ -123,7 +119,7 @@ Nachdem der Python-Code für die Verbindung zum Azure Cosmos DB for NoSQL-Konto 
 
 1. Öffnen Sie in **Visual Studio Code** das Kontextmenü für den Ordner **python/01-sdk-connect** und wählen Sie dann **In integriertem Terminal öffnen** aus, um eine neue Terminalinstanz zu öffnen.
 
-1. Bevor Sie das Skript ausführen, müssen Sie sich mit dem Befehl `az login` bei Azure anmelden. Führen Sie im Fenster Terminal Folgendes aus:
+1. Bevor Sie das Skript ausführen, müssen Sie sich mit dem Befehl `az login` bei Azure anmelden. Führen Sie im Terminalfenster Folgendes aus:
 
    ```bash
    az login

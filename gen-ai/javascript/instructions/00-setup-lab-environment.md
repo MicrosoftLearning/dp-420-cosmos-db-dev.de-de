@@ -1,11 +1,7 @@
 ---
-title: Lab-Umgebung einrichten
 lab:
   title: Lab-Umgebung einrichten
   module: Setup
-layout: default
-nav_order: 2
-parent: JavaScript SDK labs
 ---
 
 # Einrichten einer lokalen Labumgebung

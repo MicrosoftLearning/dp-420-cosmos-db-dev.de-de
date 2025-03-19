@@ -1,11 +1,7 @@
 ---
-title: Lab-Ressourcengruppe erstellen
 lab:
   title: Lab-Ressourcengruppe erstellen
   module: Setup
-layout: default
-nav_order: 1
-parent: Common setup instructions
 ---
 
 # Erstellen einer Azure-Ressourcengruppe für das Lab

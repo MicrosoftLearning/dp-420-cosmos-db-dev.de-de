@@ -1,26 +1,22 @@
 ---
-title: 03 - Erstellen und aktualisieren Sie Dokumente mit dem Azure Cosmos DB for NoSQL SDK
 lab:
   title: 03 - Erstellen und aktualisieren Sie Dokumente mit dem Azure Cosmos DB for NoSQL SDK
   module: Implement Azure Cosmos DB for NoSQL point operations
-layout: default
-nav_order: 6
-parent: JavaScript SDK labs
 ---
 
 # Erstellen und Aktualisieren von Dokumenten mit dem SDK für Azure Cosmos DB for NoSQL
 
-Die `@azure/cosmos` Bibliothek enthält Methoden zum Erstellen, Abrufen, Aktualisieren und Löschen (CRUD) von Elementen in einem Azure Cosmos DB for NoSQL-Container. Zusammengenommen führen diese Methoden einige der häufigsten „CRUD“-Operationen für verschiedene Elemente in NoSQL-API-Containern aus.
+Die `@azure/cosmos`-Bibliothek enthält Methoden zum Erstellen, Abrufen, Aktualisieren und Löschen (CRUD) von Elementen in einem Azure Cosmos DB for NoSQL-Container. Zusammengenommen führen diese Methoden einige der häufigsten „CRUD“-Operationen für verschiedene Elemente in NoSQL-API-Containern aus.
 
 In dieser Übung verwenden Sie das JavaScript SDK, um alltägliche CRUD-Operationen an einem Element in einem Azure Cosmos DB for NoSQL-Container durchzuführen.
 
 ## Vorbereiten Ihrer Entwicklungsumgebung
 
-Wenn Sie das Lab-Coderepository für **Copilots mit Azure Cosmos DB erstellen** noch nicht geklont und Ihre lokale Umgebung eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
+Wenn Sie das Lab-Coderepository für **Erstellen von Copilots mit Azure Cosmos DB** noch nicht geklont und Ihre lokale Umgebung noch nicht eingerichtet haben, lesen Sie dazu die Anleitung [Lokale Lab-Umgebung einrichten](00-setup-lab-environment.md).
 
 ## Erstellen eines Azure Cosmos DB for NoSQL-Kontos
 
-Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die **Build-Copilots mit Azure Cosmos DB**-Labs auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und mit dem [nächsten Abschnitt](#import-the-azurecosmos-library) fortfahren. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Cosmos DB integrierter Daten-Mitwirkender** zuweisen.
+Wenn Sie bereits ein Azure Cosmos DB for NoSQL-Konto für die Labs **Copilots mit Azure Cosmos DB erstellen** auf dieser Website erstellt haben, können Sie es für dieses Lab verwenden und mit dem [nächsten Abschnitt](#import-the-azurecosmos-library) fortfahren. Andernfalls sehen Sie sich die Anweisungen zum [Einrichten von Azure Cosmos DB](../../common/instructions/00-setup-cosmos-db.md) an, um ein Azure Cosmos DB for NoSQL-Konto zu erstellen, das Sie in den Labmodulen verwenden werden, und gewähren Sie Ihrer Benutzeridentität Zugriff auf die Verwaltung von Daten im Konto, indem Sie ihr die Rolle **Integrierter Mitwirkender an Cosmos DB-Daten** zuweisen.
 
 ## Importieren der @azure/cosmos-Bibliothek
 
@@ -44,13 +40,13 @@ Die **@azure/cosmos**-Bibliothek ist auf **npm** verfügbar, um sie einfach in I
     npm install @azure/cosmos
     ```
 
-1. Installieren Sie die [@azure/identity][npmjs.com/package/@azure/identity]-Bibliothek, die es uns ermöglicht, die Azure-Authentifizierung zu verwenden, um sich mit dem Azure Cosmos DB-Arbeitsbereich zu verbinden, indem Sie den folgenden Befehl verwenden:
+1. Installieren Sie die [@azure/identity][npmjs.com/package/@azure/identity]-Bibliothek, die es uns ermöglicht, die Azure-Authentifizierung zu verwenden, um eine Verbindung zum Azure Cosmos DB-Arbeitsbereich herzustellen. Verwenden Sie dazu den folgenden Befehl:
 
     ```bash
     npm install @azure/identity
     ```
 
-## Verwenden Sie die @azure/cosmos-Bibliotheken
+## Verwenden der @azure/cosmos-Bibliothek
 
 Sobald die Azure Cosmos DB-Bibliothek aus dem Azure SDK für JavaScript importiert wurde, können Sie ihre Klassen sofort verwenden, um eine Verbindung zu einem Azure Cosmos DB for NoSQL-Konto herzustellen. Die Klasse **CosmosClient** ist die Kernklasse, die verwendet wird, um die erste Verbindung zu einem Azure Cosmos DB for NoSQL-Konto herzustellen.
 
@@ -58,7 +54,7 @@ Sobald die Azure Cosmos DB-Bibliothek aus dem Azure SDK für JavaScript importie
 
 1. Öffnen Sie die leere JavaScript-Datei mit dem Namen **script.js**.
 
-1. Fügen Sie die folgenden `require` Anweisungen hinzu, um die Bibliotheken **@azure/cosmos** und **@azure/identity** zu importieren:
+1. Fügen Sie die folgenden `require`-Anweisungen hinzu, um die Bibliotheken **@azure/cosmos** und **@azure/identity** zu importieren:
 
     ```javascript
     const { CosmosClient } = require("@azure/cosmos");
@@ -73,7 +69,7 @@ Sobald die Azure Cosmos DB-Bibliothek aus dem Azure SDK für JavaScript importie
     const credential = new DefaultAzureCredential();
     ```
 
-    > &#128221; Zum Beispiel, wenn Ihr Endpunkt **https://dp420.documents.azure.com:443/** ist, würde die Anweisung **const endpoint = „https://dp420.documents.azure.com:443/“ lauten;**.
+    > &#128221; Zum Beispiel, wenn Ihr Endpunkt **https://dp420.documents.azure.com:443/** ist, würde die Anweisung **const endpoint = "https://dp420.documents.azure.com:443/" lauten;**.
 
 1. Fügen Sie eine neue Variable namens **Client** hinzu und initialisieren Sie sie als neue Instanz der Klasse **CosmosClient** unter Verwendung der Variablen **Endpunkt** und **Anmeldeinformation**:
 
@@ -263,7 +259,7 @@ Sie werden nun das Methodenset in der Klasse **Container** verwenden, um allgeme
     const { resource: saddle } = await container.item(itemId, partitionKey).read();
     ```
 
-    > &#128161; Mit der `read` Methode können Sie einen Punktlesevorgang für ein Element im Container ausführen. Die Methode erfordert die Parameter `itemId` und `partitionKey`, um den zu lesenden Artikel zu identifizieren. Im Gegensatz zur Ausführung einer Abfrage mit der SQL-Abfragesprache von Cosmos DB, um das einzelne Element zu finden, ist die `read`-Methode eine effizientere und kostengünstigere Möglichkeit, ein einzelnes Element abzurufen. Point Reads können die Daten direkt lesen und benötigen keine Abfrage-Engine, um die Anfrage zu verarbeiten.
+    > &#128161; Mit der `read` Methode können Sie einen Punktlesevorgang für ein Element im Container ausführen. Die Methode erfordert die Parameter `itemId` und `partitionKey`, um das zu lesende Element zu identifizieren. Im Gegensatz zur Ausführung einer Abfrage mit der SQL-Abfragesprache von Cosmos DB, um das einzelne Element zu finden, ist die Methode `read` eine effizientere und kostengünstigere Möglichkeit, ein einzelnes Element abzurufen. Point Reads können die Daten direkt lesen und benötigen keine Abfrage-Engine, um die Anfrage zu verarbeiten.
 
 1. Drucken Sie das Sattelobjekt mithilfe einer formatierten Ausgabezeichenfolge:
 
@@ -320,7 +316,7 @@ Beim Erlernen des SDK ist es nicht ungewöhnlich, ein Online-Azure Cosmos DB-Kon
 
 1. Schließen Sie Ihr Webbrowserfenster oder die Registerkarte.
 
-1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum Bereich **Daten-Explorer**.
+1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum **Daten-Explorer**.
 
 1. Erweitern Sie im **Data Explorer** den Datenbankknoten **cosmicworks**, und erweitern Sie dann den neuen Containerknoten **products** in der Navigationsstruktur **NOSQL-API**.
 
