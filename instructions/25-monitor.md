@@ -36,6 +36,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
@@ -69,21 +70,21 @@ Die .NET-CLI enthält einen Befehl zum Hinzufügen eines [Pakets][docs.microsoft
 
     > &#128221; Mit diesem Befehl wird das Terminal geöffnet, wobei das Startverzeichnis bereits auf den Ordner **25-monitor** festgelegt ist.
 
-1. Fügen Sie mithilfe des folgenden Befehls das Paket [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] aus NuGet hinzu:
+1. Fügen Sie das Paket [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.49.0] aus NuGet mithilfe des folgenden Befehls hinzu:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
-1. Fügen Sie das Paket [Newtonsoft.Json][nuget.org/packages/Newtonsoft.Json/13.0.1] aus NuGet mithilfe des folgenden Befehls hinzu:
+1. Fügen Sie das Paket [Newtonsoft.Json][nuget.org/packages/Newtonsoft.Json/13.0.3] aus NuGet mithilfe des folgenden Befehls hinzu:
 
     ```
-    dotnet add package Newtonsoft.Json --version 13.0.1
+    dotnet add package Newtonsoft.Json --version 13.0.3
     ```
 
 ## Ausführen eines Skripts zum Erstellen der Container und der Workload
 
-Wir sind jetzt bereit, eine Workload auszuführen, um deren Nutzung des Azure Cosmos DB-Kontos zu überwachen.  Das Skript, das wir unter der Haube ausführen werden. Dieses Skript erstellt drei Container und lädt einige Daten in diese. Das Skript führt dann einige SQL-Abfragen zufällig aus, um mehrere Benutzeranwendungen zu emulieren, die auf das Azure Cosmos DB-Konto treffen. 
+Wir sind jetzt bereit, eine Workload auszuführen, um deren Nutzung des Azure Cosmos DB-Kontos zu überwachen.  Das Skript, das wir unter der Haube ausführen werden. Dieses Skript erstellt drei Container und lädt einige Daten in diese. Das Skript führt dann einige SQL-Abfragen zufällig aus, um mehrere Benutzeranwendungen zu emulieren, die auf das Azure Cosmos DB-Konto treffen.
 
 1. Navigieren Sie in **Visual Studio Code** im Bereich **Explorer** zum Ordner **25-monitor**.
 

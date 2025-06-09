@@ -36,13 +36,15 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
     | **Location** | *Wählen Sie eine verfügbare Region aus.* |
-    | **Kapazitätsmodus** | *Serverlos* |
+    | **Kapazitätsmodus** | *Bereitgestellter Durchsatz* |
+    | **Apply Free Tier Discount** (Free-Tarif anwenden) | *Nicht anwenden* |
 
-    > &#128221; Ihre Labumgebungen haben möglicherweise Einschränkungen, die verhindern, dass Sie eine neue Ressourcengruppe erstellen. Wenn dies der Fall ist, verwenden Sie die vorhandene bereits erstellte Ressourcengruppe.
+    > &#128221; In Ihren Labumgebungen gibt es möglicherweise Einschränkungen, die verhindern, dass Sie eine neue Ressourcengruppe erstellen. Wenn dies der Fall ist, verwenden Sie die vorhandene bereits erstellte Ressourcengruppe.
 
 1. Warten Sie, bis die Bereitstellungsaufgabe abgeschlossen ist, bevor Sie mit dieser Aufgabe fortfahren.
 
@@ -54,6 +56,8 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     1. Beachten Sie das Feld **PRIMARY KEY**. Sie verwenden diesen **Schlüsselwert** später in dieser Übung.
 
+    1. Beachten Sie das Feld **PRIMARY CONNECTION STRING**. Sie verwenden diesen Wert der **Verbindungszeichenfolge** später in dieser Übung.
+
 1. Wählen Sie im Ressourcenmenü **Data Explorer** aus.
 
 1. Erweitern Sie im Bereich **Daten-Explorer** die Option **Neuer Container**, und wählen Sie dann **Neue Datenbank** aus.
@@ -63,6 +67,9 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
     | **Einstellung** | **Wert** |
     | --: | :-- |
     | **Datenbank-ID** | *``cosmicworks``* |
+    | **Durchsatz bereitstellen** | enabled |
+    | **Datenbank-Durchsatz** | **Manuell** |
+    | **Erforderliche Datenbank-RU/s** | ``1000`` |
 
 1. Beachten Sie im Bereich **Daten-Explorer** den Datenbankknoten **cosmicworks** in der Hierarchie.
 
@@ -74,7 +81,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
     | --: | :-- |
     | **Datenbank-ID** | *Vorhandene verwenden* &vert; *cosmicworks* |
     | **Container-ID** | *``products``* |
-    | **Partitionsschlüssel** | *``/categoryId``* |
+    | **Partitionsschlüssel** | *``/category/name``* |
 
 1. Erweitern Sie im Bereich **Daten-Explorer** den Datenbankknoten **cosmicworks**, und beachten Sie danach den Containerknoten **products** in der Hierarchie.
 
@@ -276,7 +283,7 @@ Sie werden ein Befehlszeilen-Dienstprogramm verwenden, das eine **cosmicworks**-
 1. Installieren Sie das Befehlszeilentool [cosmicworks][nuget.org/packages/cosmicworks] für den globalen Einsatz auf Ihrem Computer.
 
     ```
-    dotnet tool install cosmicworks --global --version 1.*
+    dotnet tool install --global CosmicWorks --version 2.3.1
     ```
 
     > &#128161; Die Ausführung dieses Befehls kann einige Minuten dauern. Dieser Befehl gibt die Warnmeldung (*Tool 'cosmicworks' is already installed') aus, wenn Sie die neueste Version dieses Tools in der Vergangenheit bereits installiert haben.
@@ -285,15 +292,14 @@ Sie werden ein Befehlszeilen-Dienstprogramm verwenden, das eine **cosmicworks**-
 
     | **Option** | **Wert** |
     | ---: | :--- |
-    | **--endpoint** | *Der Endpunktwert, den Sie zuvor in diesem Lab kopiert haben* |
-    | **--key** | *Der Schlüsselwert, den Sie zuvor in diesem Lab kopiert haben* |
-    | **--datasets** | *product* |
+    | **-c** | *Die Verbindungszeichenfolge, die Sie zuvor in diesem Lab überprüft haben* |
+    | **Anzahl der Mitarbeitenden** | *Der Befehl „cosmicworks“ füllt Ihre Datenbank mit Containern für Mitarbeitende und Produkte mit jeweils 1000 und 200 Elementen, sofern nicht anders angegeben.* |
 
-    ```
-    cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
+    ```powershell
+    cosmicworks -c "connection-string" --number-of-employees 0 --disable-hierarchical-partition-keys
     ```
 
-    > &#128221; Wenn Ihr Endpunkt beispielsweise **https&shy;://dp420.documents.azure.com:443/** und Ihr Schlüssel **fDR2ci9QgkdkvERTQ==** lautet, dann lautet der Befehl: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > &#128221; Wenn Ihr Endpunkt beispielsweise **https&shy;://dp420.documents.azure.com:443/** und Ihr Schlüssel **fDR2ci9QgkdkvERTQ==** lautet, dann lautet der Befehl: ``cosmicworks -c "AccountEndpoint=https://dp420.documents.azure.com:443/;AccountKey=fDR2ci9QgkdkvERTQ==" --number-of-employees 0 --disable-hierarchical-partition-keys``
 
 1. Warten Sie, bis der Befehl **cosmicworks** das Konto mit einer Datenbank, einem Container und Gegenständen aufgefüllt hat.
 

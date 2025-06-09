@@ -101,7 +101,7 @@ Die Bibliothek **Microsoft.Azure.Cosmos** wurde bereits in dem .NET-Skript vorin
 1. Fügen Sie mithilfe des folgenden Befehls das Paket [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] aus NuGet hinzu:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Erstellen Sie das Projekt, und führen Sie es mit dem Befehl [dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run] aus:
@@ -132,10 +132,10 @@ Die Erstellung eines neuen Containers ähnelt dem Muster, das für die Erstellun
 
 1. Öffnen Sie die Codedatei **script.cs** erneut im Ordner **05-sdk-offline**.
 
-1. Rufen Sie die [CreateContainerIfNotExistsAsync][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync]-Methode der Variablen **database** asynchron auf, wobei Sie den Namen des neuen Containers (**products**), den Partitionsschlüsselpfad (**/categoryId**) und den Durchsatz (**400**), den Sie innerhalb der Datenbank **cosmicworks** erstellen möchten, übergeben und das Ergebnis in einer Variablen vom Typ [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] speichern:
+1. Rufen Sie die Methode [CreateContainerIfNotExistsAsync][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync] der Variablen **database** asynchron auf und übergeben Sie den Namen des neuen Containers (**products**), den Partitionsschlüsselpfad (**/category/name**) und den Durchsatz (**400**), den Sie in der Datenbank **cosmicworks** erstellen möchten, und speichern Sie das Ergebnis in einer Variablen vom Typ [Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container]:
 
     ```
-    Container container = await database.CreateContainerIfNotExistsAsync("products", "/categoryId", 400);
+    Container container = await database.CreateContainerIfNotExistsAsync("products", "/category/name", 400);
     ```
 
 1. Verwenden Sie die integrierte statische Methode **Console.WriteLine**, um die[ID][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.id] Eigenschaft der Container-Klasse mit einem Header mit dem Titel **New Container** zu drucken:
@@ -157,7 +157,7 @@ Die Erstellung eines neuen Containers ähnelt dem Muster, das für die Erstellun
     Database database = await client.CreateDatabaseIfNotExistsAsync("cosmicworks");
     Console.WriteLine($"New Database:\tId: {database.Id}");
     
-    Container container = await database.CreateContainerIfNotExistsAsync("products", "/categoryId", 400);
+    Container container = await database.CreateContainerIfNotExistsAsync("products", "/category/name", 400);
     Console.WriteLine($"New Container:\tId: {container.Id}");
     ```
 

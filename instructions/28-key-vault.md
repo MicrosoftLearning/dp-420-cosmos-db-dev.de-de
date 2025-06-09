@@ -36,6 +36,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
@@ -120,16 +121,16 @@ Wir erstellen eine Web-App, die eine Verbindung mit dem Azure Cosmos DB-Konto he
 
 Die .NET-CLI enthält den Befehl [Paket hinzufügen](docs.microsoft.com/dotnet/core/tools/dotnet-add-package) zum Importieren von Paketen aus einem vorkonfigurierten Paketfeed. Eine .NET-Installation verwendet NuGet als Standardpaketfeed.
 
-1. Fügen Sie das Paket [Microsoft.Azure.Cosmos](nuget.org/packages/microsoft.azure.cosmos/3.22.1) aus NuGet mithilfe des folgenden Befehls hinzu:
+1. Fügen Sie das Paket [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.49.0] aus NuGet mithilfe des folgenden Befehls hinzu:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
-1. Fügen Sie das Paket [Newtonsoft.Json](nuget.org/packages/Newtonsoft.Json/13.0.1) aus NuGet mithilfe des folgenden Befehls hinzu:
+1. Fügen Sie das Paket [Newtonsoft.Json][nuget.org/packages/Newtonsoft.Json/13.0.3] aus NuGet mithilfe des folgenden Befehls hinzu:
 
     ```
-    dotnet add package Newtonsoft.Json --version 13.0.1
+    dotnet add package Newtonsoft.Json --version 13.0.3
     ```
 
 1. Fügen Sie das Paket [Microsoft.Azure.KeyVault](nuget.org/packages/Microsoft.Azure.KeyVault) aus NuGet mithilfe des folgenden Befehls hinzu:
