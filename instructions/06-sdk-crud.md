@@ -36,6 +36,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
@@ -70,7 +71,7 @@ Mit den Anmeldeinformationen des neu erstellten Kontos verbinden Sie sich mit de
 1. Fügen Sie mithilfe des folgenden Befehls das Paket [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] aus NuGet hinzu:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Erstellen Sie das Projekt mithilfe des Befehls [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build]:
@@ -332,7 +333,7 @@ Beim Erlernen des SDK ist es nicht ungewöhnlich, ein Online-Azure Cosmos DB SDK
 
 1. Schließen Sie Ihr Webbrowserfenster oder die Registerkarte.
 
-1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum Bereich **Daten-Explorer**.
+1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum **Daten-Explorer**.
 
 1. Erweitern Sie im **Data Explorer** den Datenbankknoten **cosmicworks**, und erweitern Sie dann den neuen Containerknoten **products** in der Navigationsstruktur **NOSQL-API**.
 
@@ -413,7 +414,7 @@ Beim Erlernen des SDK ist es nicht ungewöhnlich, ein Online-Azure Cosmos DB SDK
 
 1. Schließen Sie Ihr Webbrowserfenster oder die Registerkarte.
 
-1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum Bereich **Daten-Explorer**.
+1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum **Daten-Explorer**.
 
 1. Erweitern Sie im **Data Explorer** den Datenbankknoten **cosmicworks**, und erweitern Sie dann den neuen Containerknoten **products** in der Navigationsstruktur **NOSQL-API**.
 
@@ -459,7 +460,7 @@ Beim Erlernen des SDK ist es nicht ungewöhnlich, ein Online-Azure Cosmos DB SDK
 
 1. Schließen Sie Ihr Webbrowserfenster oder die Registerkarte.
 
-1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum Bereich **Daten-Explorer**.
+1. Navigieren Sie in der **Azure Cosmos DB**-Kontoressource zum **Daten-Explorer**.
 
 1. Erweitern Sie im **Data Explorer** den Datenbankknoten **cosmicworks**, und erweitern Sie dann den neuen Containerknoten **products** in der Navigationsstruktur **NOSQL-API**.
 

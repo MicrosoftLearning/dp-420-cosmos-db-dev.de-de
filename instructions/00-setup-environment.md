@@ -22,9 +22,9 @@ Idealerweise sollten Sie diese Labs in einer gehosteten Labumgebung absolvieren.
 
 1. Installieren Sie die neueste Version von Microsoft Edge aus [microsoft.com/edge].
 
-### .NET 6 SDK
+### .NET 8 SDK
 
-1. Laden Sie das SDK (nicht Runtime) aus [dotnet.microsoft.com/download/dotnet/6.0] herunter und installieren Sie es.
+1. Laden Sie das SDK (nicht Runtime) von [dotnet.microsoft.com/download/dotnet/8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) herunter und installieren Sie es.
 
 ### PowerShell 7
 

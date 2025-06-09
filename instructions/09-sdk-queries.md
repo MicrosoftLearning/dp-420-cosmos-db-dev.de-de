@@ -38,6 +38,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
@@ -53,9 +54,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
 1. Dieser Bereich enthält die Verbindungsdetails und Anmeldeinformationen, die erforderlich sind, um vom SDK aus eine Verbindung mit dem Konto herzustellen. Speziell:
 
-    1. Beachten Sie das Feld **URI**. Sie verwenden diesen **Endpunktwert** später in dieser Übung.
-
-    1. Beachten Sie das Feld **PRIMARY KEY**. Sie verwenden diesen **Schlüsselwert** später in dieser Übung.
+    1. Beachten Sie das Feld **PRIMARY CONNECTION STRING**. Sie verwenden diesen Wert der **Verbindungszeichenfolge** später in dieser Übung.
 
 1. Kehren Sie zu **Visual Studio Code** zurück.
 
@@ -68,7 +67,7 @@ Das Befehlszeilentool [cosmicworks][nuget.org/packages/cosmicworks] stellt Beisp
 1. Installieren Sie das Befehlszeilentool [cosmicworks][nuget.org/packages/cosmicworks] für den globalen Einsatz auf Ihrem Computer.
 
     ```
-    dotnet tool install cosmicworks --global --version 1.*
+    dotnet tool install --global CosmicWorks --version 2.3.1
     ```
 
     > &#128161; Die Ausführung dieses Befehls kann einige Minuten dauern. Dieser Befehl gibt die Warnmeldung (*Tool 'cosmicworks' is already installed') aus, wenn Sie die neueste Version dieses Tools in der Vergangenheit bereits installiert haben.
@@ -77,15 +76,14 @@ Das Befehlszeilentool [cosmicworks][nuget.org/packages/cosmicworks] stellt Beisp
 
     | **Option** | **Wert** |
     | ---: | :--- |
-    | **--endpoint** | *Der Endpunktwert, den Sie zuvor in diesem Lab kopiert haben* |
-    | **--key** | *Der Schlüsselwert, den Sie zuvor in diesem Lab kopiert haben* |
-    | **--datasets** | *product* |
+    | **-c** | *Die Verbindungszeichenfolge, die Sie zuvor in diesem Lab überprüft haben* |
+    | **Anzahl der Mitarbeitenden** | *Der Befehl „cosmicworks“ füllt Ihre Datenbank mit Containern für Mitarbeitende und Produkte mit jeweils 1000 und 200 Elementen, sofern nicht anders angegeben.* |
 
-    ```
-    cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
+    ```powershell
+    cosmicworks -c "connection-string" --number-of-employees 0 --disable-hierarchical-partition-keys
     ```
 
-    > &#128221; Wenn Ihr Endpunkt beispielsweise **https&shy;://dp420.documents.azure.com:443/** und Ihr Schlüssel **fDR2ci9QgkdkvERTQ==** lautet, dann lautet der Befehl: ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    > &#128221; Wenn Ihr Endpunkt beispielsweise **https&shy;://dp420.documents.azure.com:443/** und Ihr Schlüssel **fDR2ci9QgkdkvERTQ==** lautet, dann lautet der Befehl: ``cosmicworks -c "AccountEndpoint=https://dp420.documents.azure.com:443/;AccountKey=fDR2ci9QgkdkvERTQ==" --number-of-employees 0 --disable-hierarchical-partition-keys``
 
 1. Warten Sie, bis der Befehl **cosmicworks** das Konto mit einer Datenbank, einem Container und Elementen aufgefüllt hat.
 
@@ -167,7 +165,7 @@ Sie verwenden nun einen asynchronen Datenstrom, um eine einfach verständliche f
 
     Database database = await client.CreateDatabaseIfNotExistsAsync("cosmicworks");
 
-    Container container = await database.CreateContainerIfNotExistsAsync("products", "/categoryId");
+    Container container = await database.CreateContainerIfNotExistsAsync("products", "/category/name");
 
     string sql = "SELECT * FROM products p";
     QueryDefinition query = new (sql);
@@ -190,10 +188,10 @@ Sie verwenden nun einen asynchronen Datenstrom, um eine einfach verständliche f
 
 1. Öffnen Sie in **Visual Studio Code** das Kontextmenü für den Ordner **09-execute-query-sdk**, und wählen Sie dann **Im integrierten Terminal öffnen** aus, um eine neue Terminalinstanz zu öffnen.
 
-1. Fügen Sie das Paket [Microsoft.Azure.Cosmos](nuget.org/packages/microsoft.azure.cosmos/3.22.1) aus NuGet mithilfe des folgenden Befehls hinzu:
+1. Fügen Sie das Paket [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.49.0] aus NuGet mithilfe des folgenden Befehls hinzu:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Erstellen Sie das Projekt, und führen Sie es mit dem Befehl [dotnet run][docs.microsoft.com/dotnet/core/tools/dotnet-run] aus:

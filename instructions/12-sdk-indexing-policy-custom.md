@@ -36,6 +36,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
@@ -112,7 +113,7 @@ Das .NET SDK enthält eine Reihe von Klassen, die mit der übergeordneten Klasse
 1. Erstellen Sie eine neue Variable vom Typ [ContainerProperties][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties] namens **options**, wobei Sie die Werte ``products`` und ``/categoryId`` als Konstruktorparameter übergeben:
 
     ```
-    ContainerProperties options = new ("products", "/categoryId");
+    ContainerProperties options = new ("products", "/category/name");
     ```
 
 1. Weisen Sie die Variable **policy** der Eigenschaft [IndexingPolicy][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties.indexingpolicy] der Variablen **options** zu:
@@ -156,7 +157,7 @@ Das .NET SDK enthält eine Reihe von Klassen, die mit der übergeordneten Klasse
         new IncludedPath{ Path = "/name/?" }
     );
 
-    ContainerProperties options = new ("products", "/categoryId");
+    ContainerProperties options = new ("products", "/category/name");
     options.IndexingPolicy = policy;
 
     Container container = await database.CreateContainerIfNotExistsAsync(options);
@@ -191,7 +192,7 @@ Genau wie bei jeder anderen Indizierungsrichtlinie können Sie Data Explorer ver
 
 1. Erweitern Sie im **Data Explorer** den Datenbankknoten **cosmicworks**, und beobachten Sie dann den neuen Containerknoten **products** in der Navigationsstruktur **NOSQL-API**.
 
-1. Wählen Sie im Containerknoten **products** der Navigationsstruktur **NOSQL API** die Option **Skalierung & Einstellungen** aus.
+1. Wählen Sie im Containerknoten **products** der Navigationsstruktur **NOSQL API** die Option **Einstellungen** aus.
 
 1. Beobachten Sie die Indizierungsrichtlinie im Abschnitt **Indizierungsrichtlinie**:
 

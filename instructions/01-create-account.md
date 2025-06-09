@@ -30,6 +30,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | --: | :-- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | **Verwenden Sie Ihr bereits vorhandenes Azure-Abonnement.** *Alle Ressourcen müssen einer Ressourcengruppe angehören. Jede Ressourcengruppe muss einem Abonnement angehören.* |
     | **Ressourcengruppe** | **Verwenden Sie eine vorhandene Ressourcengruppe, oder erstellen Sie eine neue.** *Alle Ressourcen müssen einer Ressourcengruppe angehören.* |
     | **Account Name** | **Geben Sie einen global eindeutigen Namen ein.** *Der global eindeutige Name des Kontos Dieser Name wird als Teil der DNS-Adresse für Anforderungen verwendet.  Das Portal überprüft den Namen in Echtzeit.* |
@@ -84,7 +85,7 @@ Der Daten-Explorer enthält auch eine Reihe von Features zum Abfragen, Erstellen
     }
     ```
 
-1. Wählen Sie in der Befehlsleiste **Speichern** aus, um das erste JSON-Element hinzuzufügen:
+1. Wählen Sie in der Befehlsleiste **Speichern** aus, um das erste JSON-Element hinzuzufügen.
 
 1. Kehren Sie zur Registerkarte **Elemente ** zurück, und wählen Sie in der Befehlsleiste **Neues Element** aus. Ersetzen Sie im Editor das JSON-Platzhalterelement durch den folgenden Inhalt:
 
@@ -98,7 +99,7 @@ Der Daten-Explorer enthält auch eine Reihe von Features zum Abfragen, Erstellen
     }
     ```
 
-1. Wählen Sie in der Befehlsleiste **Speichern** aus, um das zweite JSON-Element hinzuzufügen:
+1. Wählen Sie in der Befehlsleiste **Speichern** aus, um das zweite JSON-Element hinzuzufügen.
 
 1. Sehen Sie sich auf der Registerkarte **Elemente** die beiden neuen Elemente im Bereich **Elemente** an.
 

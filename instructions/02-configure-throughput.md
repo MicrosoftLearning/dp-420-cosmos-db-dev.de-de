@@ -30,6 +30,7 @@ Beginnen Sie einfach mit dem Erstellen eines serverlosen Kontos. Es gibt hier ni
 
     | **Einstellung** | **Wert** |
     | --: | :-- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | **Verwenden Sie Ihr bereits vorhandenes Azure-Abonnement.** *Alle Ressourcen müssen einer Ressourcengruppe angehören. Jede Ressourcengruppe muss einem Abonnement angehören.* |
     | **Ressourcengruppe** | **Verwenden Sie eine vorhandene Ressourcengruppe, oder erstellen Sie eine neue.** *Alle Ressourcen müssen einer Ressourcengruppe angehören.*|
     | **Account Name** |  **Geben Sie einen global eindeutigen Namen ein.** *Der global eindeutige Name des Kontos Dieser Name wird als Teil der DNS-Adresse für Anforderungen verwendet.  Das Portal überprüft den Namen in Echtzeit.* |
@@ -64,7 +65,7 @@ Beginnen Sie einfach mit dem Erstellen eines serverlosen Kontos. Es gibt hier ni
     | --: | :-- |
     | **Datenbank-ID** | *Vorhandene verwenden* &vert; *cosmicworks* |
     | **Container-ID** | *`products`* |
-    | **Partitionsschlüssel** | *`/categoryId`* |
+    | **Partitionsschlüssel** | *`/category/name`* |
 
 1. Erweitern Sie im Bereich **Daten-Explorer** den Datenbankknoten **cosmicworks**, und beachten Sie danach den Containerknoten **products** in der Hierarchie.
 
@@ -86,6 +87,7 @@ Jetzt wird ein Konto für bereitgestellten Durchsatz mit herkömmlicheren Konfig
 
     | **Einstellung** | **Wert** |
     | --: | :-- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | **Verwenden Sie Ihr bereits vorhandenes Azure-Abonnement.** *Alle Ressourcen müssen einer Ressourcengruppe angehören. Jede Ressourcengruppe muss einem Abonnement angehören.* |
     | **Ressourcengruppe** | **Verwenden Sie eine vorhandene Ressourcengruppe, oder erstellen Sie eine neue.** *Alle Ressourcen müssen einer Ressourcengruppe angehören.*|
     | **Account Name** |  **Geben Sie einen global eindeutigen Namen ein.** *Der global eindeutige Name des Kontos Dieser Name wird als Teil der DNS-Adresse für Anforderungen verwendet.  Das Portal überprüft den Namen in Echtzeit.* |

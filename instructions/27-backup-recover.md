@@ -22,6 +22,7 @@ Azure Cosmos DB ist ein cloudbasierter NoSQL-Datenbankdienst, der mehrere APIs 
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |

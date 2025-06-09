@@ -34,6 +34,7 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
 
     | **Einstellung** | **Wert** |
     | ---: | :--- |
+    | **Workloadtyp** | **Weiterbildung** |
     | **Abonnement** | *Ihr vorhandenes Azure-Abonnement* |
     | **Ressourcengruppe** | *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe* |
     | **Account Name** | *Geben Sie einen global eindeutigen Namen ein.* |
@@ -86,7 +87,7 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
 1. Fügen Sie mithilfe des folgenden Befehls das Paket [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] aus NuGet hinzu:
 
     ```
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
     ```
 
 1. Erstellen Sie das Projekt mithilfe des Befehls [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build]:
