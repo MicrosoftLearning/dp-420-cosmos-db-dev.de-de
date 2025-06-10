@@ -35,7 +35,7 @@ Wenn Sie das Labcoderepository **DP-420** noch nicht in die Umgebung geklont hab
     ```
     "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe" -m pip install pip-system-certs
     az login
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet add package Microsoft.Azure.Cosmos --version 3.49.0
 
     ```
     > &#128161; Wenn Sie zuerst das Lab **Kosten für die Denormalisierung von Daten** ausgeführt haben und die von diesem Lab erstellten Azure-Ressourcen nicht entfernt haben, schließen Sie das integrierte Terminal, ignorieren Sie den folgenden Schritt, und wechseln Sie zum nächsten Abschnitt. Beachten Sie, dass das Skript fehlschlägt, wenn Sie bereits über die Ressourcen verfügen, die durch das Lab **Kosten für die Denormalisierung von Daten** erstellt wurden, und Sie versuchen, das folgende Skript auszuführen.
