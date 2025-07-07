@@ -155,7 +155,7 @@ Da nun die Azure Cosmos DB for NoSQL-Ressourcen vorhanden sind, erstellen Sie e
     ```
     SELECT 
         p.name, 
-        p.categoryName as category, 
+        p.category.name as category, 
         p.price 
     FROM 
         products p
